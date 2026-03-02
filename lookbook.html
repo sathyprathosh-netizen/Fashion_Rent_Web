@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="LUXÉ Lookbook — Magazine-editorial fashion stories. Defining the visual language of luxury.">
+    <title>LUXÉ — Lookbook & Editorial</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/lookbook.css">
+</head>
+
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">LUX<span>É</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a><a href="products.html">Pieces</a>
+                <a href="lookbook.html" class="active">Lookbook</a><a href="how-it-works.html">How It Works</a><a
+                    href="membership.html">Membership</a>
+                <a href="about.html">About</a><a href="contact.html">Concierge</a>
+            </div>
+            <div class="nav-cta">
+                <button class="nav-hamburger" id="nav-hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-drawer" id="nav-drawer">
+        <a href="index.html">Home</a><a href="products.html">Pieces</a>
+        <a href="lookbook.html">Lookbook</a><a href="how-it-works.html">How It Works</a><a
+            href="membership.html">Membership</a>
+        <a href="about.html">About</a><a href="contact.html">Concierge</a>
+    </div>
+
+    <main>
+        <!-- Full-bleed Cover -->
+        <section class="lb-cover">
+            <div class="lb-cover-bg"></div>
+            <div class="lb-cover-content">
+                <div class="lb-issue anim-fade-up" data-delay="300">Issue No. 04 — Spring 2026</div>
+                <h1 class="lb-title anim-fade-up" data-delay="500">The <em>Power</em><br>Issue</h1>
+                <p class="lb-sub anim-fade-up" data-delay="700">Dominance. Grace. Intention.<br>Fashion as the ultimate
+                    power currency.</p>
+                <a href="#lb-stories" class="btn btn-outline anim-fade-up" data-delay="900"
+                    style="margin-top:2rem">Explore the Issue</a>
+            </div>
+        </section>
+
+        <!-- Editorial Stories -->
+        <div id="lb-stories">
+            <!-- Story 1 – Full width -->
+            <article class="lb-story lb-full">
+                <div class="lb-story-img anim-fade-left">
+                    <img src="assets/img/lookbook-grand-entrance.png" alt="Art of the Grand Entrance">
+                </div>
+                <div class="lb-story-text anim-fade-up">
+                    <span class="lb-category">Evening</span>
+                    <h2 class="lb-story-title">The Art of the Grand Entrance</h2>
+                    <p>A single garment can shift the energy of an entire room. We dressed five women in five different
+                        Maison Élite pieces and sent them into the most elite events of the season. The results were
+                        unanimous: LUXÉ changes how the world sees you.</p>
+                    <a href="products.html?category=evening" class="btn btn-outline btn-sm mt-md">Shop Evening</a>
+                </div>
+            </article>
+
+            <!-- Story 2 – Split -->
+            <article class="lb-story lb-split">
+                <div class="lb-split-img anim-fade-left">
+                    <img src="assets/img/editorial-philosophy.png" alt="Violet Couture — Crystal Architectures">
+                </div>
+                <div class="lb-split-content anim-fade-left">
+                    <span class="lb-category">Couture</span>
+                    <h2 class="lb-story-title">Crystal Architectures</h2>
+                    <p>House of Véra's Amethyst Edit exists in a category of its own. Each crystal hand-placed. Each
+                        fold intentional. This season, we invited photographer Rohan Mehta to document these pieces in
+                        motion — in the corridors of heritage palaces and under open skies.</p>
+                    <blockquote>"Wearing LUXÉ couture isn't dressing up. It's choosing to be extraordinary."
+                    </blockquote>
+                    <cite>— Rohan Mehta, Photographer</cite>
+                    <a href="products.html?category=couture" class="btn btn-outline btn-sm mt-md">Explore Couture</a>
+                </div>
+            </article>
+
+            <!-- Story 3 – Mosaic -->
+            <article class="lb-story lb-mosaic">
+                <div class="lb-mosaic-grid">
+                    <div class="lb-mosaic-cell lb-mosaic-large anim-scale">
+                        <img src="assets/img/product-velours-noir.png" alt="Noir">
+                        <div class="lb-mosaic-caption">Noir Lumière</div>
+                    </div>
+                    <div class="lb-mosaic-cell anim-scale" data-delay="100">
+                        <img src="assets/img/product-ivory-column.png" alt="Bridal">
+                        <div class="lb-mosaic-caption">Bridal Couture</div>
+                    </div>
+                    <div class="lb-mosaic-cell anim-scale" data-delay="200">
+                        <img src="assets/img/archival-couture.png" alt="Street Luxe">
+                        <div class="lb-mosaic-caption">Street Luxe SS</div>
+                    </div>
+                </div>
+                <div class="lb-mosaic-text">
+                    <span class="lb-category anim-fade-up" data-delay="0">Collections</span>
+                    <h2 class="lb-story-title anim-fade-up" data-delay="150">Three Stories. One Season.</h2>
+                    <p class="anim-fade-up" data-delay="300">Our Spring 2026 edit spans three distinct worlds — the
+                        after-midnight elegance of Noir Lumière,
+                        the forever-femininity of Bridal Couture, and the concrete poetry of Street Luxe SS. In one
+                        season, we cover every occasion you'll ever need.</p>
+                </div>
+            </article>
+
+            <!-- Story 4 – Quote Feature -->
+            <article class="lb-story lb-quote-feature">
+                <div class="lb-quote-bg"></div>
+                <div class="container lb-quote-content anim-scale">
+                    <div class="lb-big-quote anim-fade-up" data-delay="0">"</div>
+                    <blockquote class="lb-feature-quote anim-fade-up" data-delay="200">Fashion is not about owning. It's
+                        about becoming.</blockquote>
+                    <cite class="lb-feature-cite anim-fade-up" data-delay="400">— LUXÉ Creative Director</cite>
+                    <a href="about.html" class="btn btn-outline mt-lg anim-fade-up" data-delay="600">Our Philosophy</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="nav-logo">LUX<span>É</span></a>
+                    <p>The world's most exclusive fashion rental house.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Navigate</h5>
+                    <ul>
+                        <li></li>
+                        <li><a href="products.html">All Pieces</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Membership</h5>
+                    <ul>
+                        <li><a href="membership.html">Plans</a></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Brand</h5>
+                    <ul>
+                        <li><a href="about.html">About LUXÉ</a></li>
+                        <li><a href="contact.html">Concierge</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 LUXÉ Fashion Rental.</p>
+                <p>Crafted with obsession.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/core.js"></script>
+</body>
+
+</html>

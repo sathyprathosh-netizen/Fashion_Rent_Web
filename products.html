@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="LUXÉ — Browse and rent premium couture fashion pieces from the world's most exclusive designers.">
+    <title>LUXÉ — All Pieces | Rent Premium Fashion</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/collections.css">
+    <link rel="stylesheet" href="css/pages/products.css">
+</head>
+
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">LUX<span>É</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a><a href="products.html" class="active">Pieces</a>
+                <a href="lookbook.html">Lookbook</a><a href="how-it-works.html">How It Works</a><a
+                    href="membership.html">Membership</a>
+                <a href="about.html">About</a><a href="contact.html">Concierge</a>
+            </div>
+            <div class="nav-cta">
+                <button class="nav-hamburger" id="nav-hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-drawer" id="nav-drawer">
+        <a href="index.html">Home</a><a href="products.html">Pieces</a>
+        <a href="lookbook.html">Lookbook</a><a href="how-it-works.html">How It Works</a><a
+            href="membership.html">Membership</a>
+        <a href="about.html">About</a><a href="contact.html">Concierge</a>
+    </div>
+
+    <main>
+        <section class="page-hero products-hero">
+            <div class="ph-overlay"></div>
+            <div class="container ph-content">
+                <div class="anim-fade-up">
+                    <span class="section-label">500+ Pieces</span>
+                    <h1 class="page-hero-title">Rentable <em>Pieces</em></h1>
+                    <p class="page-hero-sub">Runway to doorstep. Choose your statement.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="listing-toolbar anim-fade-up">
+                    <div class="filter-bar">
+                        <button class="filter-pill active" data-filter="all">All</button>
+                        <button class="filter-pill" data-filter="evening">Evening</button>
+                        <button class="filter-pill" data-filter="bridal">Bridal</button>
+                        <button class="filter-pill" data-filter="street">Street Luxe</button>
+                        <button class="filter-pill" data-filter="couture">Couture</button>
+                    </div>
+                    <div class="listing-sort">
+                        <select id="sort-select" aria-label="Sort products">
+                            <option value="default">Sort: Featured</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="results-info anim-fade-up" data-delay="100">
+                    <span id="result-count">12 pieces available</span>
+                </div>
+
+                <div class="product-grid full-grid" id="products-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="nav-logo">LUX<span>É</span></a>
+                    <p>The world's most exclusive fashion rental house.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Navigate</h5>
+                    <ul>
+                        <li></li>
+                        <li><a href="products.html">All Pieces</a></li>
+                        <li><a href="lookbook.html">Lookbook</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Membership</h5>
+                    <ul>
+                        <li><a href="membership.html">Silver</a></li>
+                        <li><a href="membership.html">Noir</a></li>
+                        <li><a href="membership.html">Royale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Brand</h5>
+                    <ul>
+                        <li><a href="about.html">About LUXÉ</a></li>
+                        <li><a href="contact.html">Concierge</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 LUXÉ Fashion Rental.</p>
+                <p>Crafted with obsession.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/core.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('products-grid');
+            let currentProducts = [...LUXE.PRODUCTS];
+
+            function renderGrid(products) {
+                grid.innerHTML = products.map(LUXE.renderProductCard).join('');
+                document.getElementById('result-count').textContent = `${products.length} pieces available`;
+                // re-trigger animations
+                grid.querySelectorAll('.anim-fade-up').forEach((el, i) => {
+                    el.dataset.delay = 50 + i * 80;
+                    setTimeout(() => el.classList.add('in-view'), 50 + i * 80);
+                });
+            }
+
+            renderGrid(currentProducts);
+            LUXE.initFilters('#products-grid', '.product-card', '.filter-pill', 'category');
+
+            document.getElementById('sort-select').addEventListener('change', function () {
+                if (this.value === 'price-asc') currentProducts.sort((a, b) => a.price - b.price);
+                else if (this.value === 'price-desc') currentProducts.sort((a, b) => b.price - a.price);
+                else currentProducts = [...LUXE.PRODUCTS];
+                renderGrid(currentProducts);
+            });
+        });
+    </script>
+</body>
+
+</html>

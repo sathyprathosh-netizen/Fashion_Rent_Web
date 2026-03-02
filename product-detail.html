@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="LUXÉ — Product detail. View fabric, fit, and rental details for elite fashion pieces.">
+    <title>LUXÉ — Product Detail</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/product-detail.css">
+</head>
+
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">LUX<span>É</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a><a href="products.html" class="active">Pieces</a>
+                <a href="lookbook.html">Lookbook</a><a href="how-it-works.html">How It Works</a><a
+                    href="membership.html">Membership</a>
+                <a href="about.html">About</a><a href="contact.html">Concierge</a>
+            </div>
+            <div class="nav-cta">
+                <button class="nav-hamburger" id="nav-hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-drawer" id="nav-drawer">
+        <a href="index.html">Home</a><a href="products.html">Pieces</a>
+        <a href="lookbook.html">Lookbook</a><a href="how-it-works.html">How It Works</a><a
+            href="membership.html">Membership</a>
+        <a href="about.html">About</a><a href="contact.html">Concierge</a>
+    </div>
+
+    <main class="pd-main" id="pd-main">
+        <div class="container">
+            <nav class="breadcrumb anim-fade-up" aria-label="breadcrumb">
+                <a href="products.html">All Pieces</a>
+                <span>/</span>
+                <span id="bc-name">Loading...</span>
+            </nav>
+
+            <div class="pd-grid">
+                <!-- Gallery -->
+                <div class="pd-gallery anim-fade-right">
+                    <div class="pd-main-img" id="pd-main-img">
+                        <img id="pd-img-main" src="" alt="">
+                        <div class="pd-img-tag" id="pd-avail-tag"></div>
+                    </div>
+                    <div class="pd-thumbs" id="pd-thumbs"></div>
+                </div>
+
+                <!-- Info -->
+                <div class="pd-info anim-fade-left">
+                    <span class="pd-collection" id="pd-collection"></span>
+                    <span class="pd-designer" id="pd-designer"></span>
+                    <h1 class="pd-name" id="pd-name"></h1>
+
+                    <div class="pd-price-row">
+                        <div class="pd-price">
+                            <span class="pd-price-num" id="pd-price"></span>
+                            <span class="pd-price-unit">/day</span>
+                        </div>
+                        <div class="pd-avail" id="pd-avail"></div>
+                    </div>
+
+                    <p class="pd-desc" id="pd-desc"></p>
+
+                    <div class="pd-detail-row">
+                        <div class="pd-detail-item">
+                            <span class="pd-detail-label">Fabric</span>
+                            <span class="pd-detail-val" id="pd-fabric"></span>
+                        </div>
+                        <div class="pd-detail-item">
+                            <span class="pd-detail-label">Deposit</span>
+                            <span class="pd-detail-val" id="pd-deposit"></span>
+                        </div>
+                    </div>
+
+                    <!-- Size Selector -->
+                    <div class="pd-section">
+                        <h4 class="pd-section-label">Select Size</h4>
+                        <div class="pd-sizes" id="pd-sizes"></div>
+                    </div>
+
+                    <!-- Duration Selector -->
+                    <div class="pd-section">
+                        <h4 class="pd-section-label">Rental Duration</h4>
+                        <div class="pd-duration">
+                            <button class="dur-btn active" data-days="1">1 Day</button>
+                            <button class="dur-btn" data-days="3">3 Days</button>
+                            <button class="dur-btn" data-days="5">5 Days</button>
+                            <button class="dur-btn" data-days="7">7 Days</button>
+                        </div>
+                        <p class="pd-total">Total: <span id="pd-total">₹0</span> <small>(excl. deposit)</small></p>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="pd-cta">
+                        <button class="btn btn-primary btn-ripple pd-rent-btn" id="pd-rent-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 12V22H4V12" />
+                                <path d="M22 7H2v5h20V7z" />
+                                <path d="M12 22V7" />
+                            </svg>
+                            Request Rental
+                        </button>
+                        <button class="btn btn-ghost pd-wish-btn" id="pd-wish-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            Add to Wishlist
+                        </button>
+                    </div>
+
+                    <!-- Success Message (hidden by default) -->
+                    <div class="pd-success hidden" id="pd-success">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <div>
+                            <strong>Rental Request Received!</strong>
+                            <p>Our concierge will confirm within 2 hours.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="pd-tags" id="pd-tags"></div>
+                </div>
+            </div>
+
+            <!-- Related -->
+            <div class="pd-related section">
+                <h3 class="section-title">You May Also <em>Love</em></h3>
+                <div class="product-grid" id="pd-related-grid"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="nav-logo">LUX<span>É</span></a>
+                    <p>The world's most exclusive fashion rental house.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Navigate</h5>
+                    <ul>
+                        <li></li>
+                        <li><a href="products.html">All Pieces</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Membership</h5>
+                    <ul>
+                        <li><a href="membership.html">Plans</a></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Brand</h5>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Concierge</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 LUXÉ Fashion Rental.</p>
+                <p>Crafted with obsession.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/core.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = parseInt(params.get('id')) || 1;
+            const p = LUXE.PRODUCTS.find(p => p.id === id) || LUXE.PRODUCTS[0];
+
+            // Populate
+            document.title = `LUXÉ — ${p.name}`;
+            document.getElementById('bc-name').textContent = p.name;
+            document.getElementById('pd-collection').textContent = p.collection;
+            document.getElementById('pd-designer').textContent = p.designer;
+            document.getElementById('pd-name').textContent = p.name;
+            document.getElementById('pd-price').textContent = `₹${p.price.toLocaleString()}`;
+            document.getElementById('pd-fabric').textContent = p.fabric;
+            document.getElementById('pd-deposit').textContent = `₹${p.deposit.toLocaleString()}`;
+            document.getElementById('pd-desc').textContent = p.description;
+
+            // Main image
+            const mainImg = document.getElementById('pd-img-main');
+            mainImg.src = p.images[0]; mainImg.alt = p.name;
+
+            // Thumbnails
+            const thumbs = document.getElementById('pd-thumbs');
+            thumbs.innerHTML = p.images.map((img, i) => `
+        <div class="pd-thumb ${i === 0 ? 'active' : ''}" data-img="${img}">
+          <img src="${img}" alt="${p.name} view ${i + 1}">
+        </div>`).join('');
+            thumbs.querySelectorAll('.pd-thumb').forEach(t => {
+                t.addEventListener('click', function () {
+                    thumbs.querySelectorAll('.pd-thumb').forEach(x => x.classList.remove('active'));
+                    this.classList.add('active');
+                    mainImg.style.opacity = '0';
+                    setTimeout(() => { mainImg.src = this.dataset.img; mainImg.style.opacity = '1'; }, 250);
+                });
+            });
+
+            // Availability
+            const avMap = { available: 'Available', limited: 'Limited Availability', unavailable: 'Currently Rented' };
+            const avEl = document.getElementById('pd-avail');
+            avEl.innerHTML = `<span class="avail-dot ${p.availability}"></span> ${avMap[p.availability]}`;
+            document.getElementById('pd-avail-tag').innerHTML = `<span class="tag tag-gold">${p.tags[0]}</span>`;
+
+            // Sizes
+            const sizesEl = document.getElementById('pd-sizes');
+            sizesEl.innerHTML = p.sizes.map(s =>
+                `<button class="size-btn">${s}</button>`).join('');
+            sizesEl.querySelectorAll('.size-btn').forEach(b => {
+                b.addEventListener('click', function () {
+                    sizesEl.querySelectorAll('.size-btn').forEach(x => x.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Duration
+            let selectedDays = 1;
+            const totalEl = document.getElementById('pd-total');
+            totalEl.textContent = `₹${p.price.toLocaleString()}`;
+            document.querySelectorAll('.dur-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    document.querySelectorAll('.dur-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    selectedDays = parseInt(this.dataset.days);
+                    totalEl.textContent = `₹${(p.price * selectedDays).toLocaleString()}`;
+                });
+            });
+
+            // Tags
+            document.getElementById('pd-tags').innerHTML = p.tags.map(t =>
+                `<span class="tag tag-gold">${t}</span>`).join('');
+
+            // Rent button - logic is now in core.js initWhatsAppButtons
+            /* 
+            document.getElementById('pd-rent-btn').addEventListener('click', function () {
+                const s = document.getElementById('pd-success');
+                s.classList.remove('hidden');
+                s.style.animation = 'slideUp .6s var(--ease-luxury) both';
+                this.disabled = true;
+                this.textContent = 'Request Sent ✓';
+                this.style.opacity = '.6';
+            });
+            */
+
+            // Wishlist button
+            let wishlisted = false;
+            document.getElementById('pd-wish-btn').addEventListener('click', function () {
+                wishlisted = !wishlisted;
+                this.classList.toggle('wishlisted', wishlisted);
+                this.querySelector('svg').setAttribute('fill', wishlisted ? 'var(--clr-crimson)' : 'none');
+            });
+
+            // Related
+            const relGrid = document.getElementById('pd-related-grid');
+            const related = LUXE.PRODUCTS.filter(x => x.id !== p.id && x.category === p.category).slice(0, 4);
+            relGrid.innerHTML = (related.length ? related : LUXE.PRODUCTS.slice(0, 4)).map(LUXE.renderProductCard).join('');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="LUXÉ Concierge — Reach out to our white-glove team for personalized fashion rental assistance.">
+    <title>LUXÉ — Concierge & Contact</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/contact.css">
+</head>
+
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">LUX<span>É</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a><a href="products.html">Pieces</a>
+                <a href="lookbook.html">Lookbook</a><a href="how-it-works.html">How It Works</a><a
+                    href="membership.html">Membership</a>
+                <a href="about.html">About</a><a href="contact.html" class="active">Concierge</a>
+            </div>
+            <div class="nav-cta">
+                <button class="nav-hamburger" id="nav-hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-drawer" id="nav-drawer">
+        <a href="index.html">Home</a><a href="products.html">Pieces</a>
+        <a href="lookbook.html">Lookbook</a><a href="how-it-works.html">How It Works</a><a
+            href="membership.html">Membership</a>
+        <a href="about.html">About</a><a href="contact.html">Concierge</a>
+    </div>
+
+    <main>
+        <!-- Hero -->
+        <section class="page-hero contact-hero">
+            <div class="ph-overlay"></div>
+            <div class="container ph-content">
+                <div class="anim-fade-up">
+                    <span class="section-label">White-Glove Service</span>
+                    <h1 class="page-hero-title">Your Personal <em>Concierge</em></h1>
+                    <p class="page-hero-sub">We respond within 2 hours. Always.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Form -->
+                    <div class="contact-form-wrap anim-fade-right anim-border-draw">
+                        <div class="card-border-line top"></div>
+                        <div class="card-border-line right"></div>
+                        <div class="card-border-line bottom"></div>
+                        <div class="card-border-line left"></div>
+                        <h2 class="section-title anim-fade-up" style="margin-bottom:var(--space-xl)">Send a
+                            <em>Message</em>
+                        </h2>
+
+                        <form class="contact-form" id="contact-form" novalidate>
+                            <!-- Success state -->
+                            <div class="form-success hidden" id="form-success">
+                                <div class="success-icon">
+                                    <svg viewBox="0 0 52 52" fill="none">
+                                        <circle cx="26" cy="26" r="25" stroke="rgba(46,204,113,.4)"
+                                            stroke-width="1.5" />
+                                        <path d="M14 26l8 8 16-16" stroke="#2ECC71" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="60"
+                                            stroke-dashoffset="60" class="check-path" />
+                                    </svg>
+                                </div>
+                                <h3>Message Received</h3>
+                                <p>Your concierge will be in touch within 2 hours.</p>
+                            </div>
+
+                            <div id="form-fields">
+                                <div class="form-row">
+                                    <div class="form-group anim-fade-up" data-delay="0">
+                                        <label for="f-name">Full Name</label>
+                                        <input type="text" id="f-name" name="name" placeholder="Isabelle Laurent"
+                                            required>
+                                    </div>
+                                    <div class="form-group anim-fade-up" data-delay="100">
+                                        <label for="f-email">Email Address</label>
+                                        <input type="email" id="f-email" name="email" placeholder="isabelle@example.com"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="form-group anim-fade-up" data-delay="200">
+                                    <label for="f-subject">Subject</label>
+                                    <select id="f-subject" name="subject">
+                                        <option value="">Select a topic</option>
+                                        <option>General Enquiry</option>
+                                        <option>Rental Request</option>
+                                        <option>Membership Question</option>
+                                        <option>Damage / Return Issue</option>
+                                        <option>Bespoke Styling</option>
+                                    </select>
+                                </div>
+                                <div class="form-group anim-fade-up" data-delay="300">
+                                    <label for="f-message">Your Message</label>
+                                    <textarea id="f-message" name="message" rows="6"
+                                        placeholder="Tell us how we can assist you..." required></textarea>
+                                </div>
+                                <div class="form-group form-check anim-fade-up" data-delay="400">
+                                    <label class="check-label">
+                                        <input type="checkbox" id="f-news" name="newsletter">
+                                        <span class="check-custom"></span>
+                                        Subscribe to LUXÉ editorial updates
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-ripple contact-submit anim-fade-up"
+                                    id="form-submit" data-delay="500">
+                                    Send to Concierge
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Info Panel -->
+                    <div class="contact-info anim-fade-left">
+                        <div class="ci-block anim-fade-up tilt-card anim-border-draw" data-delay="0">
+                            <div class="card-border-line top"></div>
+                            <div class="card-border-line right"></div>
+                            <div class="card-border-line bottom"></div>
+                            <div class="card-border-line left"></div>
+                            <div class="ci-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </div>
+                            <div class="ci-text">
+                                <h5>Concierge Hotline</h5>
+                                <p>+91 98 7654 3210</p>
+                                <span>Available 9AM – 9PM IST, 7 days a week</span>
+                            </div>
+                        </div>
+                        <div class="ci-block anim-fade-up tilt-card anim-border-draw" data-delay="150">
+                            <div class="card-border-line top"></div>
+                            <div class="card-border-line right"></div>
+                            <div class="card-border-line bottom"></div>
+                            <div class="card-border-line left"></div>
+                            <div class="ci-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </div>
+                            <div class="ci-text">
+                                <h5>Email Concierge</h5>
+                                <p>concierge@luxe.fashion</p>
+                                <span>Response within 2 hours</span>
+                            </div>
+                        </div>
+                        <div class="ci-block anim-fade-up tilt-card anim-border-draw" data-delay="300">
+                            <div class="card-border-line top"></div>
+                            <div class="card-border-line right"></div>
+                            <div class="card-border-line bottom"></div>
+                            <div class="card-border-line left"></div>
+                            <div class="ci-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div class="ci-text">
+                                <h5>Atelier & Showroom</h5>
+                                <p>14 Malabar Hill, Mumbai 400006</p>
+                                <span>Appointment only — Mon–Sat</span>
+                            </div>
+                        </div>
+                        <div class="ci-block anim-fade-up tilt-card anim-border-draw" data-delay="450">
+                            <div class="card-border-line top"></div>
+                            <div class="card-border-line right"></div>
+                            <div class="card-border-line bottom"></div>
+                            <div class="card-border-line left"></div>
+                            <div class="ci-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </div>
+                            <div class="ci-text">
+                                <h5>Showroom Hours</h5>
+                                <p>Mon – Sat: 11AM – 7PM IST</p>
+                                <span>Sunday by private appointment only</span>
+                            </div>
+                        </div>
+
+                        <div class="ci-note anim-fade-up tilt-card anim-border-draw" data-delay="600">
+                            <div class="card-border-line top"></div>
+                            <div class="card-border-line right"></div>
+                            <div class="card-border-line bottom"></div>
+                            <div class="card-border-line left"></div>
+                            <div class="ci-note-icon">✦</div>
+                            <p>Royale members receive a dedicated concierge number for around-the-clock assistance.</p>
+                            <a href="membership.html" class="btn btn-outline btn-sm mt-sm">View Membership</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="nav-logo">LUX<span>É</span></a>
+                    <p>The world's most exclusive fashion rental house.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Navigate</h5>
+                    <ul>
+                        <li></li>
+                        <li><a href="products.html">All Pieces</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Membership</h5>
+                    <ul>
+                        <li><a href="membership.html">Plans</a></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Brand</h5>
+                    <ul>
+                        <li><a href="about.html">About LUXÉ</a></li>
+                        <li><a href="contact.html">Concierge</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 LUXÉ Fashion Rental.</p>
+                <p>Crafted with obsession.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/core.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contact-form');
+            const fields = document.getElementById('form-fields');
+            const success = document.getElementById('form-success');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const name = document.getElementById('f-name').value.trim();
+                const email = document.getElementById('f-email').value.trim();
+                const message = document.getElementById('f-message').value.trim();
+
+                if (!name || !email || !message) {
+                    document.querySelectorAll('input:required, textarea:required').forEach(input => {
+                        if (!input.value.trim()) input.classList.add('error');
+                    });
+                    return;
+                }
+
+                const btn = document.getElementById('form-submit');
+                btn.textContent = 'Sending...';
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    fields.style.opacity = '0';
+                    fields.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        fields.classList.add('hidden');
+                        success.classList.remove('hidden');
+                        success.style.animation = 'slideUp .7s var(--ease-luxury) both';
+                        // Animate check path
+                        const path = success.querySelector('.check-path');
+                        if (path) path.style.animation = 'checkDraw .5s ease .3s forwards';
+                    }, 400);
+                }, 1200);
+            });
+
+            // Clear error on input
+            document.querySelectorAll('input, textarea').forEach(el => {
+                el.addEventListener('input', () => el.classList.remove('error'));
+            });
+        });
+    </script>
+</body>
+
+</html>

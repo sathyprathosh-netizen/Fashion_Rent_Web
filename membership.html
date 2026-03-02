@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="LUXÉ Membership — Choose your tier: Silver, Noir, or Royale. Unlock priority access to luxury fashion rental.">
+    <title>LUXÉ — Membership & Pricing</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/membership.css">
+</head>
+
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">LUX<span>É</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a><a href="products.html">Pieces</a>
+                <a href="lookbook.html">Lookbook</a><a href="how-it-works.html">How It Works</a><a
+                    href="membership.html" class="active">Membership</a>
+                <a href="about.html">About</a><a href="contact.html">Concierge</a>
+            </div>
+            <div class="nav-cta">
+                <button class="nav-hamburger" id="nav-hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-drawer" id="nav-drawer">
+        <a href="index.html">Home</a><a href="products.html">Pieces</a>
+        <a href="lookbook.html">Lookbook</a><a href="how-it-works.html">How It Works</a><a
+            href="membership.html">Membership</a>
+        <a href="about.html">About</a><a href="contact.html">Concierge</a>
+    </div>
+
+    <main>
+        <!-- Hero -->
+        <section class="mem-hero">
+            <div class="mem-hero-glow"></div>
+            <div class="container mem-hero-content">
+                <div class="anim-fade-up">
+                    <span class="section-label">Elite Access</span>
+                    <h1 class="page-hero-title"
+                        style="font-family:var(--font-display);font-size:clamp(var(--fs-3xl),7vw,var(--fs-5xl));font-weight:300;letter-spacing:-.03em;line-height:1">
+                        Unlock <em>Unlimited</em> Luxury</h1>
+                    <p
+                        style="color:var(--clr-text-secondary);font-size:var(--fs-md);margin-top:var(--space-md);max-width:50ch">
+                        Three tiers. One obsession — making extraordinary fashion available to those who truly deserve
+                        it.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Billing Toggle -->
+        <section class="section mem-section">
+            <div class="container">
+                <div class="billing-toggle anim-fade-up">
+                    <span>Monthly</span>
+                    <button class="toggle-btn" id="billing-toggle" aria-label="Toggle billing">
+                        <div class="toggle-knob"></div>
+                    </button>
+                    <span>Annual <span class="tag tag-gold" style="margin-left:.25rem">Save 20%</span></span>
+                </div>
+
+                <div class="tier-grid">
+                    <!-- Silver -->
+                    <div class="tier-card anim-fade-up" data-delay="0" data-tier="silver">
+                        <div class="tier-top">
+                            <div class="tier-icon silver-icon">◇</div>
+                            <h3 class="tier-name">Silver</h3>
+                            <p class="tier-tagline">Begin the journey</p>
+                        </div>
+                        <div class="tier-price-wrap">
+                            <span class="tier-price-num num-anim" data-monthly="4999" data-annual="3999">₹4,999</span>
+                            <span class="tier-price-per">/month</span>
+                        </div>
+                        <ul class="tier-features">
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> 2 rentals per month</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> Standard delivery (48h)</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> 7-day rental periods</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> Access to Silver collection</li>
+                            <li class="tier-feat-no"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2.5">
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg> Priority access</li>
+                            <li class="tier-feat-no"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2.5">
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg> Personal stylist</li>
+                            <li class="tier-feat-no"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2.5">
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg> Couture access</li>
+                        </ul>
+                        <a href="#" class="btn btn-ghost tier-cta">Select Silver</a>
+                    </div>
+
+                    <!-- Noir (Featured) -->
+                    <div class="tier-card featured anim-fade-up" data-delay="120" data-tier="noir">
+                        <div class="tier-popular-badge">Most Loved</div>
+                        <div class="tier-top">
+                            <div class="tier-icon noir-icon">✦</div>
+                            <h3 class="tier-name">Noir</h3>
+                            <p class="tier-tagline">Fashion as a lifestyle</p>
+                        </div>
+                        <div class="tier-price-wrap">
+                            <span class="tier-price-num num-anim" data-monthly="9999" data-annual="7999">₹9,999</span>
+                            <span class="tier-price-per">/month</span>
+                        </div>
+                        <ul class="tier-features">
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> 5 rentals per month</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> Express delivery (24h)</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> 14-day rental periods</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> Full collection access</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> Priority access</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> Personal styling tips</li>
+                            <li class="tier-feat-no"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2.5">
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg> Dedicated stylist</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary btn-ripple tier-cta">Select Noir</a>
+                    </div>
+
+                    <!-- Royale -->
+                    <div class="tier-card royale-card anim-fade-up" data-delay="240" data-tier="royale">
+                        <div class="tier-top">
+                            <div class="tier-icon royale-icon">♛</div>
+                            <h3 class="tier-name">Royale</h3>
+                            <p class="tier-tagline">The pinnacle of access</p>
+                        </div>
+                        <div class="tier-price-wrap">
+                            <span class="tier-price-num num-anim" data-monthly="19999"
+                                data-annual="15999">₹19,999</span>
+                            <span class="tier-price-per">/month</span>
+                        </div>
+                        <ul class="tier-features">
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> Unlimited rentals</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> Same-day luxury delivery</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> Unlimited rental period</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> Couture-only access</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> First priority — always</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> Dedicated personal stylist</li>
+                            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg> Private runway previews</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline tier-cta royale-btn">Select Royale</a>
+                    </div>
+                </div>
+
+                <!-- Comparison Note -->
+                <p class="comparison-note anim-fade-up">All plans include free return shipping, cleaning & restoration,
+                    and access to the member dashboard. No hidden fees, ever.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section mem-faq">
+            <div class="container container--narrow">
+                <h2 class="section-title text-center anim-fade-up">Questions, <em>Answered</em></h2>
+                <div class="faq-list" id="faq-list">
+                    <div class="faq-item anim-fade-up" data-delay="0">
+                        <button class="faq-q">Can I switch plans? <span class="faq-icon">+</span></button>
+                        <div class="faq-a">
+                            <p>Yes. You can upgrade or downgrade your plan at any time. Changes take effect at the start
+                                of the next billing cycle.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item anim-fade-up" data-delay="80">
+                        <button class="faq-q">Is there a minimum commitment? <span class="faq-icon">+</span></button>
+                        <div class="faq-a">
+                            <p>No. All plans are month-to-month by default. Choose annual billing to save 20%.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item anim-fade-up" data-delay="160">
+                        <button class="faq-q">What if I don't use all my rentals? <span
+                                class="faq-icon">+</span></button>
+                        <div class="faq-a">
+                            <p>Silver and Noir rentals do not roll over. Royale members have unlimited access, so this
+                                doesn't apply.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item anim-fade-up" data-delay="240">
+                        <button class="faq-q">What's included in the deposit? <span class="faq-icon">+</span></button>
+                        <div class="faq-a">
+                            <p>A refundable security deposit is held per rental. It's fully returned within 3 business
+                                days of the piece's return in good condition. Royale members have reduced deposit
+                                requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="nav-logo">LUX<span>É</span></a>
+                    <p>The world's most exclusive fashion rental house.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Navigate</h5>
+                    <ul>
+                        <li></li>
+                        <li><a href="products.html">All Pieces</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Membership</h5>
+                    <ul>
+                        <li><a href="membership.html">Silver</a></li>
+                        <li><a href="membership.html">Noir</a></li>
+                        <li><a href="membership.html">Royale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Brand</h5>
+                    <ul>
+                        <li><a href="about.html">About LUXÉ</a></li>
+                        <li><a href="contact.html">Concierge</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 LUXÉ Fashion Rental.</p>
+                <p>Crafted with obsession.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/core.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Billing toggle
+            let isAnnual = false;
+            const toggle = document.getElementById('billing-toggle');
+            const prices = document.querySelectorAll('.tier-price-num');
+            toggle.addEventListener('click', () => {
+                isAnnual = !isAnnual;
+                toggle.classList.toggle('active', isAnnual);
+                prices.forEach(p => {
+                    const val = isAnnual ? parseInt(p.dataset.annual) : parseInt(p.dataset.monthly);
+                    p.textContent = '₹' + val.toLocaleString();
+                });
+            });
+
+            // FAQ accordion
+            document.querySelectorAll('.faq-q').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const item = this.closest('.faq-item');
+                    const isOpen = item.classList.contains('open');
+                    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                    if (!isOpen) item.classList.add('open');
+                });
+            });
+
+            // Tier hover spotlight
+            document.querySelectorAll('.tier-card').forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    card.style.setProperty('--mx', x + '%');
+                    card.style.setProperty('--my', y + '%');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

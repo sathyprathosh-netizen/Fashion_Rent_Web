@@ -1,0 +1,286 @@
+/* ============================================================
+   CONTACT PAGE CSS
+   ============================================================ */
+
+.contact-hero {
+    background:
+        linear-gradient(to bottom, rgba(11, 11, 15, .3) 0%, rgba(11, 11, 15, .8) 70%, var(--clr-black) 100%),
+        url('../../assets/img/new-lookbook-bg.png') center/cover;
+}
+
+/* ── Contact Grid ── */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: clamp(3rem, 7vw, 6rem);
+    align-items: stretch;
+}
+
+/* Form wrapper – fills full grid row height */
+.contact-form-wrap {
+    background: var(--clr-black-light);
+    border: var(--border-dim);
+    border-radius: var(--radius-xl);
+    padding: clamp(2rem, 5vw, 3.5rem);
+    display: flex;
+    flex-direction: column;
+    overflow: visible !important;
+}
+
+/* ── Form Layout ── */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    flex: 1;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-caps);
+    text-transform: uppercase;
+    color: var(--clr-text-secondary);
+    display: block;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: var(--clr-black-light);
+    border: var(--border-dim);
+    border-radius: var(--radius-md);
+    padding: .9rem 1.2rem;
+    color: var(--clr-text-primary);
+    font-size: var(--fs-sm);
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color var(--tr-normal), box-shadow var(--tr-normal);
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    flex: 1;
+    min-height: 220px;
+}
+
+.form-group:has(textarea) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--clr-purple-glow);
+    box-shadow: 0 0 24px rgba(91, 45, 142, .2);
+    background: rgba(91, 45, 142, .04);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--clr-text-dim);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: var(--clr-crimson);
+}
+
+/* Checkbox */
+.form-check {
+    flex-direction: row !important;
+    align-items: center;
+}
+
+.check-label {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    font-size: var(--fs-sm);
+    color: var(--clr-text-secondary);
+    cursor: none;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    font-weight: var(--fw-regular) !important;
+}
+
+.check-label input[type="checkbox"] {
+    display: none;
+}
+
+.check-custom {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 1.5px solid rgba(255, 255, 255, .15);
+    background: var(--clr-black-light);
+    transition: var(--tr-normal);
+    flex-shrink: 0;
+    position: relative;
+}
+
+.check-label input:checked+.check-custom {
+    background: var(--clr-purple);
+    border-color: var(--clr-purple-glow);
+}
+
+.check-label input:checked+.check-custom::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.contact-submit {
+    align-self: stretch;
+    padding: 1rem 2.5rem;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    margin-top: .5rem;
+}
+
+/* Success */
+.form-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-md);
+    padding: var(--space-xl) 0;
+}
+
+.success-icon svg {
+    width: 80px;
+    height: 80px;
+}
+
+.check-path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+}
+
+.form-success h3 {
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-light);
+}
+
+.form-success p {
+    font-size: var(--fs-sm);
+    color: var(--clr-text-secondary);
+}
+
+/* ── Info Panel ── */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.ci-block {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    padding: var(--space-md);
+    border: var(--border-dim);
+    border-radius: var(--radius-lg);
+    background: var(--clr-black-light);
+    transition: var(--tr-normal);
+    overflow: visible !important;
+}
+
+.ci-block:hover {
+    border-color: rgba(194, 26, 56, .2);
+}
+
+.ci-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: var(--clr-crimson-dim);
+    border: 1px solid rgba(194, 26, 56, .25);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr-crimson-glow);
+}
+
+.ci-text h5 {
+    font-size: var(--fs-xs);
+    letter-spacing: var(--ls-caps);
+    text-transform: uppercase;
+    color: var(--clr-text-dim);
+    margin-bottom: .3rem;
+}
+
+.ci-text p {
+    font-size: var(--fs-sm);
+    color: var(--clr-text-primary);
+    font-weight: var(--fw-medium);
+    margin-bottom: .2rem;
+}
+
+.ci-text span {
+    font-size: var(--fs-xs);
+    color: var(--clr-text-dim);
+}
+
+.ci-note {
+    padding: var(--space-md) var(--space-lg);
+    border: var(--border-accent);
+    border-radius: var(--radius-lg);
+    background: rgba(201, 169, 110, .05);
+    text-align: center;
+}
+
+.ci-note-icon {
+    font-size: var(--fs-lg);
+    color: var(--clr-gold);
+    margin-bottom: .5rem;
+}
+
+.ci-note p {
+    font-size: var(--fs-sm);
+    color: var(--clr-text-secondary);
+    line-height: var(--lh-loose);
+}
+
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

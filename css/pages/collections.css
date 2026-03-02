@@ -1,0 +1,117 @@
+/* ============================================================
+   COLLECTIONS PAGE CSS — page-specific only
+   (Shared card/collection/hero/filter styles are in global.css)
+   ============================================================ */
+
+/* ── Collections Hero ── */
+.collections-hero {
+    background:
+        linear-gradient(to bottom, rgba(11, 11, 15, .3) 0%, rgba(11, 11, 15, .8) 70%, var(--clr-black) 100%),
+        url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80') center/cover no-repeat;
+}
+
+/* ── Collections Masonry ── */
+.collections-masonry {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: var(--space-xl);
+}
+
+.collections-masonry .collection-card {
+    aspect-ratio: 4/5;
+}
+
+/* Staggered sizes for masonry feel */
+.collections-masonry .collection-card:nth-child(3n+2) {
+    margin-top: 2.5rem;
+}
+
+/* ── Designer Spotlight ── */
+.designer-spotlight {
+    background: var(--clr-black-mid);
+    border-top: var(--border-dim);
+}
+
+.ds-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+.ds-text {
+    max-width: 46ch;
+}
+
+.ds-text p {
+    font-size: var(--fs-sm);
+    color: var(--clr-text-secondary);
+    line-height: var(--lh-loose);
+    margin: var(--space-md) 0;
+}
+
+.ds-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+}
+
+.ds-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: .5rem;
+    padding: var(--space-lg);
+    border: var(--border-dim);
+    border-radius: var(--radius-lg);
+    background: var(--grad-card);
+    transition: var(--tr-normal);
+}
+
+.ds-stat:hover {
+    border-color: rgba(194, 26, 56, .3);
+    box-shadow: 0 0 30px rgba(194, 26, 56, .1);
+}
+
+.ds-num {
+    font-family: var(--font-display);
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-light);
+    background: var(--grad-crimson);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ds-label {
+    font-size: var(--fs-xs);
+    letter-spacing: var(--ls-caps);
+    text-transform: uppercase;
+    color: var(--clr-text-dim);
+}
+
+@media (max-width: 900px) {
+    .collections-masonry {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .collections-masonry .collection-card:nth-child(3n+2) {
+        margin-top: 0;
+    }
+
+    .ds-inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .collections-masonry {
+        grid-template-columns: 1fr;
+    }
+
+    .ds-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}

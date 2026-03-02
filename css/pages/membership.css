@@ -1,0 +1,346 @@
+/* ============================================================
+   MEMBERSHIP PAGE CSS
+   ============================================================ */
+
+/* ── Hero ── */
+.mem-hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--grad-hero);
+}
+
+.mem-hero-glow {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 60% 60% at 20% 50%, rgba(91, 45, 142, .4) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 30%, rgba(194, 26, 56, .3) 0%, transparent 60%);
+    animation: gradBreath 10s ease infinite;
+}
+
+.mem-hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: calc(var(--nav-h) + var(--space-xl));
+    padding-bottom: var(--space-2xl);
+}
+
+/* ── Billing Toggle ── */
+.billing-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    justify-content: center;
+    margin-bottom: var(--space-xl);
+    font-size: var(--fs-sm);
+    color: var(--clr-text-secondary);
+}
+
+.toggle-btn {
+    width: 52px;
+    height: 28px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, .15);
+    background: var(--clr-black-light);
+    position: relative;
+    cursor: none;
+    transition: background var(--tr-normal);
+}
+
+.toggle-btn.active {
+    background: var(--clr-purple);
+    border-color: var(--clr-purple-glow);
+}
+
+.toggle-knob {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    transition: transform .3s var(--ease-spring);
+}
+
+.toggle-btn.active .toggle-knob {
+    transform: translateX(24px);
+}
+
+/* ── Tier Grid ── */
+.tier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    align-items: start;
+}
+
+.tier-card {
+    padding: var(--space-xl) var(--space-lg);
+    border: var(--border-dim);
+    border-radius: var(--radius-lg);
+    background: var(--grad-card);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--tr-normal), box-shadow var(--tr-normal), border-color var(--tr-normal);
+    /* Mouse-follow spotlight */
+    --mx: 50%;
+    --my: 50%;
+}
+
+.tier-card::before {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, .05) 0%, transparent 70%);
+    top: calc(var(--my) - 125px);
+    left: calc(var(--mx) - 125px);
+    pointer-events: none;
+    transition: top .1s, left .1s;
+}
+
+.tier-card:hover {
+    transform: translateY(-8px);
+}
+
+.tier-card.featured {
+    border-color: rgba(91, 45, 142, .5);
+    background: linear-gradient(145deg, rgba(91, 45, 142, .12) 0%, rgba(11, 11, 15, 0) 100%);
+    box-shadow: 0 0 60px rgba(91, 45, 142, .2);
+}
+
+.tier-card.featured:hover {
+    box-shadow: var(--grad-glow-purple);
+}
+
+.royale-card {
+    border-color: rgba(201, 169, 110, .3);
+}
+
+.royale-card:hover {
+    box-shadow: var(--grad-glow-gold);
+    border-color: rgba(201, 169, 110, .5);
+}
+
+.tier-popular-badge {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-bold);
+    letter-spacing: var(--ls-caps);
+    text-transform: uppercase;
+    background: var(--grad-crimson);
+    color: #fff;
+    padding: .25rem .75rem;
+    border-radius: var(--radius-pill);
+}
+
+.tier-top {
+    margin-bottom: var(--space-lg);
+}
+
+.tier-icon {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: var(--space-sm);
+    display: block;
+}
+
+.silver-icon {
+    color: #a8b2c4;
+}
+
+.noir-icon {
+    color: var(--clr-purple-glow);
+}
+
+.royale-icon {
+    color: var(--clr-gold);
+}
+
+.tier-name {
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-light);
+    letter-spacing: var(--ls-tight);
+    margin-bottom: .25rem;
+}
+
+.tier-tagline {
+    font-size: var(--fs-sm);
+    color: var(--clr-text-dim);
+}
+
+.tier-price-wrap {
+    margin-bottom: var(--space-xl);
+}
+
+.tier-price-num {
+    font-family: var(--font-display);
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-semibold);
+    transition: color var(--tr-normal);
+}
+
+.tier-price-per {
+    font-size: var(--fs-sm);
+    color: var(--clr-text-dim);
+}
+
+.featured .tier-price-num {
+    background: var(--grad-crimson);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.royale-card .tier-price-num {
+    color: var(--clr-gold);
+}
+
+/* Feature list */
+.tier-features {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    margin-bottom: var(--space-xl);
+}
+
+.tier-features li {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: var(--fs-sm);
+    color: var(--clr-text-secondary);
+}
+
+.tier-features li svg {
+    flex-shrink: 0;
+    color: #2ECC71;
+}
+
+.tier-feat-no {
+    opacity: .4;
+}
+
+.tier-feat-no svg {
+    color: var(--clr-text-dim);
+}
+
+.tier-cta {
+    width: 100%;
+    justify-content: center;
+}
+
+.royale-btn {
+    border-color: var(--clr-gold);
+    color: var(--clr-gold);
+}
+
+.royale-btn:hover {
+    background: rgba(201, 169, 110, .08);
+}
+
+.comparison-note {
+    text-align: center;
+    margin-top: var(--space-xl);
+    font-size: var(--fs-sm);
+    color: var(--clr-text-dim);
+    border: var(--border-dim);
+    border-radius: var(--radius-pill);
+    padding: var(--space-sm) var(--space-lg);
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+/* ── FAQ ── */
+.mem-faq .section-title {
+    margin-bottom: var(--space-xl);
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.faq-item {
+    border: var(--border-dim);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color var(--tr-normal);
+}
+
+.faq-item.open {
+    border-color: rgba(91, 45, 142, .4);
+}
+
+.faq-q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    color: var(--clr-text-primary);
+    cursor: none;
+    text-align: left;
+    background: transparent;
+    transition: background var(--tr-fast);
+}
+
+.faq-q:hover {
+    background: rgba(255, 255, 255, .03);
+}
+
+.faq-icon {
+    font-size: var(--fs-xl);
+    color: var(--clr-purple-glow);
+    transition: transform var(--tr-normal);
+    line-height: 1;
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s var(--ease-luxury), padding .4s;
+}
+
+.faq-item.open .faq-a {
+    max-height: 200px;
+}
+
+.faq-a p {
+    padding: 0 var(--space-lg) var(--space-md);
+    font-size: var(--fs-sm);
+    color: var(--clr-text-secondary);
+    line-height: var(--lh-loose);
+}
+
+@media (max-width: 900px) {
+    .tier-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tier-card.featured {
+        order: -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .mem-section .billing-toggle {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

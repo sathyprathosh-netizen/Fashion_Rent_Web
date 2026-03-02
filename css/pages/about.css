@@ -1,0 +1,307 @@
+/* ============================================================
+   ABOUT PAGE CSS
+   ============================================================ */
+
+/* ── Hero ── */
+.about-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--grad-hero);
+}
+
+.about-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 10% 50%, rgba(194, 26, 56, .25) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 80% 20%, rgba(91, 45, 142, .25) 0%, transparent 60%);
+    animation: gradBreath 12s ease infinite;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: calc(var(--nav-h) + var(--space-xl));
+    padding-bottom: var(--space-2xl);
+}
+
+.about-eyebrow {
+    margin-bottom: var(--space-md);
+}
+
+.about-headline {
+    font-family: var(--font-display);
+    font-size: clamp(var(--fs-2xl), 5vw, 4.5rem);
+    font-weight: var(--fw-light);
+    letter-spacing: var(--ls-tight);
+    line-height: 1.15;
+    max-width: 18ch;
+}
+
+.about-headline em {
+    color: var(--clr-crimson-glow);
+    font-style: italic;
+}
+
+.about-big-word {
+    display: inline-block;
+    font-size: clamp(var(--fs-3xl), 8vw, 7rem);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--ls-tight);
+    background: var(--grad-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+
+/* ── Philosophy ── */
+.about-philosophy {
+    background: var(--clr-black-mid);
+}
+
+.ap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
+}
+
+.ap-img {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 4/5;
+}
+
+.ap-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ap-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.ap-text p {
+    font-size: var(--fs-sm);
+    color: var(--clr-text-secondary);
+    line-height: var(--lh-loose);
+}
+
+.ap-stats {
+    display: flex;
+    gap: var(--space-xl);
+    margin-top: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.ap-stat {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.ap-num {
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-semibold);
+    background: var(--grad-crimson);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ap-label {
+    font-size: var(--fs-xs);
+    letter-spacing: var(--ls-caps);
+    text-transform: uppercase;
+    color: var(--clr-text-dim);
+}
+
+/* ── Big Text Storytelling ── */
+.about-story-text {
+    padding-block: var(--space-3xl);
+    border-top: var(--border-dim);
+    text-align: center;
+}
+
+.ast-para {
+    font-family: var(--font-display);
+    font-size: clamp(var(--fs-xl), 3.5vw, var(--fs-3xl));
+    font-weight: var(--fw-light);
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--clr-text-primary);
+    margin-bottom: var(--space-md);
+}
+
+.ast-para em {
+    color: var(--clr-gold);
+}
+
+.ast-cite {
+    font-size: var(--fs-sm);
+    color: var(--clr-text-dim);
+    letter-spacing: var(--ls-wide);
+    display: block;
+    margin-top: var(--space-lg);
+}
+
+/* ── Sustainability ── */
+.about-sustain {
+    background: var(--clr-black-mid);
+}
+
+.sustain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
+}
+
+.sustain-pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+.sustain-pillar {
+    padding: var(--space-lg);
+    background: var(--clr-black-light);
+    border: var(--border-dim);
+    border-radius: var(--radius-lg);
+    transition: var(--tr-normal);
+    position: relative;
+    overflow: visible !important;
+}
+
+.sustain-pillar:hover {
+    border-color: rgba(201, 169, 110, .25);
+    transform: translateY(-4px);
+}
+
+.sp-num {
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-semibold);
+    color: var(--clr-gold);
+    margin-bottom: .35rem;
+    line-height: 1;
+}
+
+.sp-label {
+    font-size: var(--fs-xs);
+    color: var(--clr-text-dim);
+    line-height: var(--lh-loose);
+}
+
+/* ── Team ── */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.team-card {
+    text-align: center;
+    padding: var(--space-lg);
+    border: var(--border-dim);
+    border-radius: var(--radius-lg);
+    background: var(--clr-black-light);
+    transition: var(--tr-normal);
+}
+
+.team-card:hover {
+    border-color: rgba(194, 26, 56, .2);
+    transform: translateY(-6px);
+}
+
+.team-img {
+    margin-bottom: var(--space-md);
+    display: flex;
+    justify-content: center;
+}
+
+.team-avatar-large {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--clr-crimson-dim);
+    border: 1px solid rgba(194, 26, 56, .35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-md);
+    font-weight: var(--fw-bold);
+    letter-spacing: .05em;
+    color: var(--clr-crimson-glow);
+}
+
+.team-card h4 {
+    font-family: var(--font-display);
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-light);
+    margin-bottom: .25rem;
+}
+
+.team-card span {
+    font-size: var(--fs-xs);
+    letter-spacing: var(--ls-caps);
+    text-transform: uppercase;
+    color: var(--clr-text-dim);
+    display: block;
+    margin-bottom: var(--space-md);
+}
+
+.team-card p {
+    font-size: var(--fs-sm);
+    font-style: italic;
+    color: var(--clr-text-secondary);
+    line-height: var(--lh-loose);
+}
+
+.about-cta {
+    border-top: var(--border-dim);
+}
+
+.about-cta .section-cta {
+    gap: var(--space-sm);
+}
+
+@media (max-width: 900px) {
+
+    .ap-grid,
+    .sustain-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ap-img {
+        display: none;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .sustain-pillars {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-cta .section-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+}
